@@ -1,5 +1,6 @@
 import { Footer, Question, SelectLang, AvatarDropdown, AvatarName } from '@/components';
 import { LinkOutlined } from '@ant-design/icons';
+// as 类型断言（Type Assertions）
 import type { Settings as LayoutSettings } from '@ant-design/pro-components';
 import { SettingDrawer } from '@ant-design/pro-components';
 import type { RunTimeLayoutConfig } from '@umijs/max';
@@ -18,6 +19,8 @@ const isDev = process.env.NODE_ENV === 'development';
 /**
  * @see  https://umijs.org/zh-CN/plugins/plugin-initial-state
  * */
+
+// <解决值的注解>
 export async function getInitialState(): Promise<{
   settings?: Partial<LayoutSettings>;
   currentUser?: API.CurrentUser;
@@ -152,8 +155,8 @@ export const layout: RunTimeLayoutConfig = ({ initialState, setInitialState }) =
 
 export async function onRouteChange({ clientRoutes, location }) {
   const menus = getRemoteMenu();
- // console.log('onRouteChange', clientRoutes, location, menus);
-  if(menus === null && location.pathname !== PageEnum.LOGIN) {
+  // console.log('onRouteChange', clientRoutes, location, menus);
+  if (menus === null && location.pathname !== PageEnum.LOGIN) {
     console.log('refresh')
     history.go(0);
   }
@@ -172,11 +175,21 @@ export async function patchClientRoutes({ routes }) {
 export function render(oldRender: () => void) {
   // console.log('render get routers', oldRender)
   const token = getAccessToken();
-  if(!token || token?.length === 0) {
+  if (!token || token?.length === 0) {
     oldRender();
     return;
   }
   getRoutersInfo().then(res => {
+    console.log(res)
+    res.unshift({
+      authority: undefined,
+      component: "Layout",
+      hideChildrenInMenu: false,
+      hideInMenu: false,
+      icon: "",
+      name: "主页",
+      path: "/MainPage"
+    })
     setRemoteMenu(res);
     oldRender()
   });
