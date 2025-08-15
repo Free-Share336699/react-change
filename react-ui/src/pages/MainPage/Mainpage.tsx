@@ -62,6 +62,7 @@ const BlogMainPage: React.FC = () => {
             尊敬的面试官您好
           </Title>
           <Space>
+          <Button type="text" onClick={() => history.push('http://littlezhen.top/')}>切换vue版本</Button>
             <Button type="text" onClick={() => history.push('/')}>个人中心</Button>
             <Button type="text" onClick={() => history.push('/archives')}>归档</Button>
             <Button type="text" onClick={() => history.push('/about')}>关于</Button>
