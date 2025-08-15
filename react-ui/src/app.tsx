@@ -183,13 +183,25 @@ export function render(oldRender: () => void) {
     console.log(res)
     res.unshift({
       authority: undefined,
-      component: "Layout",
+      hideChildrenInMenu: true,
+      hideInMenu: true,
+      icon: "",
+      name: "详情",
+      path: "/MainPage/Post",
+      component:"MainPage/Post",
+      hidden :true
+    })
+    res.unshift({
+      authority: undefined,
       hideChildrenInMenu: false,
       hideInMenu: false,
       icon: "",
-      name: "主页",
-      path: "/MainPage"
+      name: "主页博客Demo",
+      path: "/MainPage",
+      component:"MainPage/Mainpage",
+      hidden :false
     })
+    
     setRemoteMenu(res);
     oldRender()
   });
