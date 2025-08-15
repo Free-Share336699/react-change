@@ -1,5 +1,13 @@
+/*
+ * @Author: wangzhen 1615777455@qq.com
+ * @Date: 2025-03-08 20:58:49
+ * @LastEditors: wangzhen 1615777455@qq.com
+ * @LastEditTime: 2025-08-16 00:29:53
+ * @FilePath: \react-ui\src\locales\zh-CN\pages.ts
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ */
 export default {
-  'pages.layouts.userLayout.title': 'Ant Design 是西湖区最具影响力的 Web 设计规范',
+  'pages.layouts.userLayout.title': '欢迎登录小臻管理平台,登录后可切换Vue3版本',
   'pages.login.accountLogin.tab': '账户密码登录',
   'pages.login.accountLogin.errorMessage': '错误的用户名和密码(admin/admin123)',
   'pages.login.failure': '登录失败，请重试！',
