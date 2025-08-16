@@ -26,8 +26,8 @@ export const Question = () => {
       }}
     >
       <div style={{
-        display: 'flex',
-        height: 26,
+        position: 'relative',
+        top: "-20px",
       }}>Vue3 Demo</div>
       {/* <QuestionCircleOutlined /> */}
     </div>
